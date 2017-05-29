@@ -19,12 +19,13 @@
 
 ## Messagesテーブル
 
-|   Columns             | Types |   Options         |
-|:----------------------|:------|:------------------|
-| body                  | text  | null: false       |
-| image                 | text  |                   |
-| t.references :user_id |       | foreign_key: true |
-| t.references :group_id|       | foreign_key: true |
+|   Columns   |   Types     |   Options         |
+|:------------|:------------|:------------------|
+| body        | text        | null: false       |
+| image       | text        |                   |
+| user_id     | references  | foreign_key: true |
+| group_id    | references  | foreign_key: true |
+
 
 ### Association:
 
@@ -35,10 +36,10 @@
 
 ## Groupsテーブル
 
-|   Columns            | Types  |   Options                 |
-|:---------------------|:-------|:--------------------------|
-| name                 | string | null: false, unique: true |
-| t.references :user_id|        | foreign_key: true         |
+|   Columns   |   Types    |   Options                 |
+|:------------|:-----------|:--------------------------|
+| name        | string     | null: false, unique: true |
+| user_id     | references | foreign_key: true         |
 
 ### Association:
 
@@ -50,10 +51,10 @@
 
 
 ## Group_usersテーブル
-|   Columns                 |   Options                      |
-|:--------------------------|:-------------------------------|
-| t.references :gruop_id    | foreign_key: true, index: true |
-| t.references :user_id     | foreign_key: true, index: true |
+|   Columns   |   Types    |   Options                      |
+|:------------|:-----------|:-------------------------------|
+| gruop_id    | references | foreign_key: true, index: true |
+| user_id     | references | foreign_key: true, index: true |
 
 ### Association
 
