@@ -10,54 +10,54 @@
 
 ### Association:
 
- -has_many :messages
+ - has_many :messages
 
- -has_many :groups, through: :group_users
+ - has_many :groups, through: :group_users
 
- -has_many :groups
+ - has_many :groups
 
 
 ## Messagesテーブル
 
-|   Columns   |   Types  |   Options         |
-|:------------|:---------|:------------------|
-| body        | text     | null: false       |
-| image       | text     |                   |
-| user_id     | integer  | foreign_key: true |
-| group_id    | integer  | foreign_key: true |
+|   Columns             | Types |   Options         |
+|:----------------------|:------|:------------------|
+| body                  | text  | null: false       |
+| image                 | text  |                   |
+| t.references :user_id |       | foreign_key: true |
+| t.references :group_id|       | foreign_key: true |
 
-### Assiciation:
+### Association:
 
- -belongs_to :user
+ - belongs_to :user
 
- -belongs_to :group
+ - belongs_to :group
 
 
 ## Groupsテーブル
 
-|   Columns   |   Types  |   Options                 |
-|:------------|:---------|:--------------------------|
-| name        | string   | null: false, unique: true |
-| user_id     | integer  | foreign_key: true         |
+|   Columns            | Types  |   Options                 |
+|:---------------------|:-------|:--------------------------|
+| name                 | string | null: false, unique: true |
+| t.references :user_id|        | foreign_key: true         |
 
 ### Association:
 
- -has_many :messages
+ - has_many :messages
 
- -has_many :users, through: :group_users
+ - has_many :users, through: :group_users
 
- -has_many :users
+ - has_many :users
 
 
 ## Group_usersテーブル
-|   Columns   |   Types  |   Options                      |
-|:------------|:---------|:-------------------------------|
-| gruop_id    | integer  | foreign_key: true, index: true |
-| user_id     | integer  | foreign_key: true, index: true |
+|   Columns                 |   Options                      |
+|:--------------------------|:-------------------------------|
+| t.references :gruop_id    | foreign_key: true, index: true |
+| t.references :user_id     | foreign_key: true, index: true |
 
 ### Association
 
- -belongs_to :user
+ - belongs_to :user
 
- -belongs_to :group
+ - belongs_to :group
 
