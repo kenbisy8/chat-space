@@ -1,28 +1,63 @@
-== README
+# DATABASE設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usersテーブル
 
-Things you may want to cover:
+|   Columns   |   Types  |   Options                 |
+|:------------|:---------|:--------------------------|
+| nickname    | string   | null: false, unique: true |
 
-* Ruby version
+  ※deviseで作成するため、ユーザー名のみ追加
 
-* System dependencies
+### Association:
 
-* Configuration
+ -has_many :messages
 
-* Database creation
+ -has_many :groups, through: :group_users
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ -has_many :groups
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Messagesテーブル
+
+|   Columns   |   Types  |   Options         |
+|:------------|:---------|:------------------|
+| body        | text     | null: false       |
+| image       | text     |                   |
+| user_id     | integer  | foreign_key: true |
+| group_id    | integer  | foreign_key: true |
+
+### Assiciation:
+
+ -belongs_to :user
+
+ -belongs_to :group
+
+
+## Groupsテーブル
+
+|   Columns   |   Types  |   Options                 |
+|:------------|:---------|:--------------------------|
+| name        | string   | null: false, unique: true |
+| user_id     | integer  | foreign_key: true         |
+
+### Association:
+
+ -has_many :messages
+
+ -has_many :users, through: :group_users
+
+ -has_many :users
+
+
+## Group_usersテーブル
+|   Columns   |   Types  |   Options                      |
+|:------------|:---------|:-------------------------------|
+| gruop_id    | integer  | foreign_key: true, index: true |
+| user_id     | integer  | foreign_key: true, index: true |
+
+### Association
+
+ -belongs_to :user
+
+ -belongs_to :group
+
