@@ -1,0 +1,39 @@
+#contents {
+    width: 100vw;
+    background-color: $default-bg;
+    .sideBar {
+        width: 300px;
+        height: 100vh;
+        background-color: #2f3e51;
+        float: left;
+
+        &__menu {
+            width: 260px;
+            background-color: #253141;
+            padding: 10px 20px;
+            &__name {
+              @include __name;
+              line-height: 100px;
+              color: $side-fc;
+            .icon {
+              color: $side-fc;
+              padding-right: 5px;
+              float: right;
+            }
+            }
+        }
+
+        &__group {
+            padding: 20px 20px 20px;
+            &__name {
+                color: $side-fc;
+                font-size: 15px;
+                padding-bottom: 5px;
+            }
+            &__text {
+                color: $side-fc;
+                font-size: 11px;
+            }
+        }
+    }
+}

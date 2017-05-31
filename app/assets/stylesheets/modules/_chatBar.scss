@@ -1,0 +1,35 @@
+
+.chat {
+  width: calc( 100vw - 300px );
+  float: right;
+  &__bar {
+    width: calc( 100vw - 380px );
+    background-color: $default-bg;
+    padding: 0 40px;
+    border-bottom: medium solid #eeeeee;
+    margin-bottom: 6px;
+
+    &__group {
+      float: left;
+      font-size: 20px;
+      color: #333333;
+      padding: 40px 0 15px;
+    }
+
+    &__edit {
+      float: right;
+      @include border(10px 0, 30px 0 0);
+      #btn {
+        margin: 20px;
+        color: $btn-color;
+        text-decoration: none;
+      }
+    }
+
+    &__member {
+      @include __sub;
+      clear: both;
+      margin-bottom: 15px;
+    }
+  }
+}

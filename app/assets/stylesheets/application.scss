@@ -1,0 +1,16 @@
+@import "reset";
+@import "font-awesome";
+@import "variables";
+@import "mixin";
+
+//左のbar
+@import "modules/sideBar";
+
+//右上のchatroomのbar
+@import "modules/chatBar";
+
+//chatroom 本文
+@import "modules/chatRoom";
+
+//chat投稿フォーム
+@import "modules/footer";
