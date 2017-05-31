@@ -3,12 +3,11 @@
   width: calc( 100vw - 300px );
   float: right;
   &__bar {
-    width: calc( 100vw - 370px );
+    width: calc( 100vw - 380px );
     background-color: $default-bg;
     padding: 0 40px;
     border-bottom: medium solid #eeeeee;
     margin-bottom: 6px;
-    // position: fixed;
 
     &__group {
       float: left;
