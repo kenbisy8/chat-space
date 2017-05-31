@@ -1,0 +1,34 @@
+
+#contents
+  .sideBar
+    .sideBar__menu
+      .sideBar__menu__name
+        sample
+        = link_to root_path, class: "icon" do
+          %i.fa.fa-cog
+        = link_to root_path, class: "icon" do
+          %i.fa.fa-pencil-square-o
+
+    = render 'messages/group_name'
+
+
+  .chat
+    .chat__bar
+      .chat__bar__group test
+      .chat__bar__edit
+        = link_to 'edit', root_path, id: "btn"
+      .chat__bar__member MEMBER: sample
+
+    = render 'messages/chat_room'
+    = render 'messages/chat_room'
+
+
+  .footer
+    %form.footer__form
+      %input.message{ type: "text", placeholder: "type a message" }
+      %label
+        %i.fa.fa-picture-o
+          %input.image{ type: "file" }
+      %input#submit{ type: "submit", value: "SEND" }
+
+
