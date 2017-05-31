@@ -1,0 +1,23 @@
+
+.chat__room {
+  padding: 40px 40px 0;
+
+  &__name {
+    float: left;
+    @include __name;
+    color: $chat-fc;
+  }
+
+  &__date {
+    @include __sub;
+    float: left;
+    padding: 4px 10px 0;
+  }
+
+  &__text {
+    clear: both;
+    font-size: 14px;
+    color: $chat-fc;
+    padding-top: 10px;
+  }
+}

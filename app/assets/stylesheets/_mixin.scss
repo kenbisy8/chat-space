@@ -1,0 +1,19 @@
+//username汎用
+@mixin __name {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+//日付、グループメンバー
+@mixin __sub {
+  font-size: 12px;
+  color: $sub-fc;
+}
+
+//formデザイン
+@mixin border($padding, $margin) {
+  border: 1px solid $btn-color;
+  padding: $padding;
+  margin: $margin;
+}

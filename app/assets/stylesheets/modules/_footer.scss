@@ -1,0 +1,40 @@
+
+.footer {
+  height: 90px;
+  width: calc( 100vw - 300px);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #AAAAAA;
+  &__form {
+    padding: 0 40px;
+
+      .message {
+      width: calc( 100% - 150px);
+      margin: 20px 20px 20px 0;
+      padding: 11px 10px;
+      font-size: 16px;
+      color: $chat-fc;
+      }
+
+      label {
+        .fa.fa-picture-o {
+          position: absolute;
+          top: 37px;
+          right: 166px;
+          padding-right: 10px;
+
+          .image {
+            display: none;
+          }
+        }
+      }
+
+      #submit {
+        @include border(10px 25px, 0);
+        background-color: $btn-color;
+        color: #FFFFFF;
+      }
+  }
+}
+
