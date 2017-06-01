@@ -1,0 +1,9 @@
+.flash {
+  @include flash;
+  &__alert{
+    background-color: red;
+  }
+  &__notice {
+    background-color: $btn-color;
+  }
+}

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update(user_params)
-    redirect_to root_path
+    redirect_to root_path, notice: "更新されました"
   end
 
   private

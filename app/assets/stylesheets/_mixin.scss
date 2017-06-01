@@ -17,3 +17,11 @@
   padding: $padding;
   margin: $margin;
 }
+
+//flashデザイン
+@mixin flash {
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
