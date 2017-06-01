@@ -3,14 +3,9 @@
   .sideBar
     .sideBar__menu
       .sideBar__menu__name
-        - if user_signed_in?
-          = current_user.nickname
-          = link_to edit_user_path(current_user), class: "icon" do
-            %i.fa.fa-cog
-        - else
-          No User
-          = link_to new_user_session_path, class: "icon" do
-            %i.fa.fa-cog
+        = current_user.nickname
+        = link_to edit_user_path(current_user), class: "icon" do
+          %i.fa.fa-cog
         = link_to new_user_session_path, class: "icon" do
           %i.fa.fa-pencil-square-o
 
