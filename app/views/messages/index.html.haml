@@ -9,8 +9,11 @@
         = link_to new_group_path, class: "icon" do
           %i.fa.fa-pencil-square-o
 
-    = render 'messages/group_name'
-
+    .sideBar__group
+      - current_user.groups.each do |group|
+        .sideBar__group__name
+          = group.name
+        .sideBar__group__text texttexttext
 
   .chat
     .chat__bar

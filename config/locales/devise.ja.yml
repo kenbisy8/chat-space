@@ -57,3 +57,7 @@ ja:
         subject: 'パスワードの再設定'
       unlock_instructions:
         subject: 'アカウントのロック解除'
+  activerecord:
+    attributes:
+      group:
+        name: グループ名

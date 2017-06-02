@@ -24,15 +24,16 @@
         }
 
         &__group {
-            padding: 20px 20px 20px;
+            padding: 0 20px 20px;
             &__name {
                 color: $side-fc;
                 font-size: 15px;
-                padding-bottom: 5px;
+                padding-top: 20px;
             }
             &__text {
                 color: $side-fc;
                 font-size: 11px;
+                padding-bottom: 20px;
             }
         }
     }
