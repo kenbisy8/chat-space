@@ -1,0 +1,6 @@
+.chat-group-form
+  %h1 チャットグループ編集
+
+  #new_chat_group.new_chat_group
+  = form_for (@group), url: group_path do |f|
+    = render 'chatGroup', { group: @group, f: f }
