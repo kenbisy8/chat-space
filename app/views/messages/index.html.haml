@@ -1,37 +1,33 @@
+= render 'sideBar'
 
-#contents
-  .sideBar
-    .sideBar__menu
-      .sideBar__menu__name
-        = current_user.nickname
-        = link_to edit_user_path(current_user), class: "icon" do
-          %i.fa.fa-cog
-        = link_to new_group_path, class: "icon" do
-          %i.fa.fa-pencil-square-o
+.chat
+  .chat__bar
+    .chat__bar__group
+      = @group.name
+    .chat__bar__edit
+      = link_to 'EDIT', 'edit', id: "btn"
+    .chat__bar__member
+      MEMBER:
+      - @group.users.each do |group|
+        %i
+          = "#{group.nickname}  "
 
-    .sideBar__group
-      - current_user.groups.each do |group|
-        .sideBar__group__name
-          = group.name
-        .sideBar__group__text texttexttext
-
-  .chat
-    .chat__bar
-      .chat__bar__group test
-      .chat__bar__edit
-        = link_to 'edit', root_path, id: "btn"
-      .chat__bar__member MEMBER: sample
-
-    = render 'messages/chat_room'
-    = render 'messages/chat_room'
+  - @group.messages.order("created_at DESC").each do |message|
+    .chat__room
+      .chat__room__name
+        = message.user.nickname
+      .chat__room__date
+        = message.created_at.to_s(:time)
+      .chat__room__text
+        = message.body
+        = image_tag message.image
 
 
-  .footer
-    %form.footer__form
-      %input.message{ type: "text", placeholder: "type a message" }
-      %label
+.footer
+  .footer__form
+    = form_for @message, url: group_messages_path do |f|
+      = f.text_field :body, placeholder: "Type your MESSAGE", class: 'message'
+      = f.label :image do
         %i.fa.fa-picture-o
-          %input.image{ type: "file" }
-      %input#submit{ type: "submit", value: "SEND" }
-
-
+          = f.file_field :image, class: 'image'
+      = f.submit 'SEND', id: 'submit'
