@@ -9,7 +9,7 @@
           %i.fa.fa-pencil-square-o
 
     .sideBar__group
-      - @side_group_data.each do |group|
+      - @groups.each do |group|
         = link_to group_messages_path(group), class: 'underline' do
           .sideBar__group__user
             .sideBar__group__user-name

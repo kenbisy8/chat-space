@@ -1,14 +1,14 @@
 class MessagesController < ApplicationController
 
   def index
-    group_data
-    side_group_data
+    find_group
+    @groups = current_user.groups
     @message = Message.new
   end
 
   def create
-    group_data
-    side_group_data
+    find_group
+    @groups = current_user.groups
     @message = Message.new(message_params)
     if @message.save(message_params)
       redirect_to group_messages_path, notice: "メッセージが送信されました"
@@ -24,11 +24,7 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:body, :image).merge(group_id: params[:group_id], user_id: current_user.id)
   end
 
-  def group_data
+  def find_group
     @group = Group.find(params[:group_id])
-  end
-
-  def side_group_data
-    @side_group_data = current_user.groups
   end
 end
