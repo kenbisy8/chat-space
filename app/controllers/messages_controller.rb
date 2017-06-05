@@ -2,8 +2,9 @@ class MessagesController < ApplicationController
 
   def index
     find_group
-    @groups = current_user.groups
+    @groups = current_user.groups.includes(:messages)
     @message = Message.new
+    @messages = @group.messages.order("created_at DESC").includes(:user)
   end
 
   def create
