@@ -25,15 +25,21 @@
 
         &__group {
             padding: 0 20px 20px;
-            &__name {
-                color: $side-fc;
-                font-size: 15px;
-                padding-top: 20px;
-            }
-            &__text {
-                color: $side-fc;
-                font-size: 11px;
-                padding-bottom: 20px;
+        .underline {
+            text-decoration: none;
+        }
+            &__user {
+            text-decoration: none;
+                &-name {
+                    color: $side-fc;
+                    font-size: 15px;
+                    padding-top: 20px;
+                }
+                &-text {
+                    color: $side-fc;
+                    font-size: 11px;
+                    padding-bottom: 20px;
+                }
             }
         }
     }
