@@ -12,16 +12,7 @@
         %i
           = "#{group.nickname}  "
 
-  - @group.messages.order("created_at DESC").each do |message|
-    .chat__room
-      .chat__room__name
-        = message.user.nickname
-      .chat__room__date
-        = message.created_at.to_s(:time)
-      .chat__room__text
-        = message.body
-        = image_tag message.image
-
+  = render 'chatRoom', group: @group
 
 .footer
   .footer__form
