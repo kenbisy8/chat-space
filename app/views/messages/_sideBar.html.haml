@@ -15,7 +15,4 @@
             .sideBar__group__user-name
               = group.name
             .sideBar__group__user-text
-              - if group.messages.present?
-                = group.messages.last.body
-              -else
-                メッセージがありません。
+              = group.show_messages

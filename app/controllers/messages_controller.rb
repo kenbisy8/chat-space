@@ -2,15 +2,15 @@ class MessagesController < ApplicationController
 
   def index
     find_group
-    @groups = current_user.groups.includes(:messages)
+    get_user_groups.includes(:messages)
     @message = Message.new
     @messages = @group.messages.order("created_at DESC").includes(:user)
   end
 
   def create
     find_group
-    @groups = current_user.groups
-    @message = Message.new(message_params)
+    get_user_groups
+    @message = Message.new
     if @message.save(message_params)
       redirect_to group_messages_path, notice: "メッセージが送信されました"
     else
@@ -27,5 +27,9 @@ class MessagesController < ApplicationController
 
   def find_group
     @group = Group.find(params[:group_id])
+  end
+
+  def get_user_groups
+    @groups = current_user.groups
   end
 end
