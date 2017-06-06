@@ -61,3 +61,9 @@ ja:
     attributes:
       group:
         name: グループ名
+  activerecord:
+    attributes:
+      message:
+        body: 'メッセージ'
+        image: '画像'
+        body_or_image: 'メッセージまたは画像'

@@ -10,10 +10,14 @@
     margin-bottom: 6px;
 
     &__group {
+      width: calc( 100vw - 600px );
       float: left;
       font-size: 20px;
       color: #333333;
       padding: 40px 0 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     &__edit {
