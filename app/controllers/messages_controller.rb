@@ -1,17 +1,13 @@
 class MessagesController < ApplicationController
+  before_action :find_group, :get_user_groups, :show_group_messages
 
   def index
-    find_group
-    get_user_groups.includes(:messages)
     @message = Message.new
-    @messages = @group.messages.order("created_at DESC").includes(:user)
   end
 
   def create
-    find_group
-    get_user_groups
-    @message = Message.new
-    if @message.save(message_params)
+    @message = Message.new(message_params)
+    if @message.save
       redirect_to group_messages_path, notice: "メッセージが送信されました"
     else
       flash.now[:alert] = "メッセージまたは画像を入力してください"
@@ -30,6 +26,10 @@ class MessagesController < ApplicationController
   end
 
   def get_user_groups
-    @groups = current_user.groups
+    @groups = current_user.groups.includes(:messages)
+  end
+
+  def show_group_messages
+    @messages = @group.messages.order("created_at DESC").includes(:user)
   end
 end
