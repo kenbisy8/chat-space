@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pry-rails'
 describe Message do
   describe '#create' do
     it "is valid with a body" do
