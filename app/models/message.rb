@@ -3,7 +3,7 @@ class Message < ApplicationRecord
   belongs_to :group
 
   mount_uploader :image, ImageUploader
-  validates :body_or_image, presence: true
+  validates :body_or_image, :group_id, :user_id, presence: true
 
   private
 
