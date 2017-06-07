@@ -37,6 +37,8 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'bullet'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', "~> 4.4.1"
 end
 
 group :development do
@@ -48,10 +50,13 @@ group :development do
   gem 'erb2haml'
 end
 
+group :test do
+  gem 'faker'
+end
+
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'rails-i18n'
 gem 'carrierwave'
 gem 'rmagick'
-

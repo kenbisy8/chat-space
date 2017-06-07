@@ -12,3 +12,7 @@
 !/log/.keep
 /tmp
 public/
+spec/.DS_Store
+spec/fixtures/files/.DS_Store
+spec/factories/.DS_Store
+spec/fixtures
