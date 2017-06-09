@@ -34,7 +34,7 @@ describe MessagesController do
       end
     end
 
-    describe 'without login user' do
+    context 'without login user' do
       it 'requires login' do
         get :index, params: { group_id: group.id }
         expect(response).to redirect_to new_user_session_path
