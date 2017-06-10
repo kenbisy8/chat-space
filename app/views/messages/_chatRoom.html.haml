@@ -1,9 +1,17 @@
 - messages.each do |message|
-  .chat__room
-    .chat__room__name
-      = message.user.nickname
-    .chat__room__date
-      = message.created_at.to_s(:time)
-    .chat__room__text
-      = message.body
-      = image_tag message.image
+  - if message.body.present?
+    .chat__room
+      .chat__room__name
+        = message.user.nickname
+      .chat__room__date
+        = message.created_at.to_s(:time)
+      .chat__room__text
+        = message.body
+  - if message.image.present?
+    .chat__room
+      .chat__room__name
+        = message.user.nickname
+      .chat__room__date
+        = message.created_at.to_s(:time)
+      .chat__room__text
+        = image_tag message.image
