@@ -37,7 +37,7 @@ $(function(){
       var html = buildHTML(data);
       $('.chat__bar').after(html);
       $('html,body').animate({scrollTop: 0});
-      $('.message').val('');
+      $('.message,.image').val('');
     })
     .fail(function(){
       alert('error');
