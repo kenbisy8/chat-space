@@ -19,7 +19,7 @@
     = f.label 'チャットメンバーを追加', class: 'chat-group-form__label'
   .chat-group-form__field--right
     #addMember.chat-group-form__search.clearfix
-      %input#user-input.chat-group-form__input{type: "text", placeholder: "追加したいユーザー名を入力してください"}
+      %input#user-input.chat-group-form__input{ type: "text", placeholder: "追加したいユーザー名を入力してください"}
 
 
 .chat-group-form__field.clearfix
@@ -27,7 +27,8 @@
     = f.label 'チャットメンバー', class: 'chat-group-form__label'
   #removeMember.chat-group-form__field--right
     #user-add-field.chat-group-form__search.clearfix
-
+      = f.label current_user.nickname
+      %input.chat-group-form__input{ name: "group[user_ids][]", type: "hidden", value: current_user.id }
 
 .chat-group-form__field.clearfix
   .chat-group-form__field--right

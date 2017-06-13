@@ -1,5 +1,5 @@
 $(function(){
-  var user_input = $('#user-input');
+  var $user_input = $('#user-input');
 
   function buildHTML(data){
     var html =
@@ -27,9 +27,9 @@ $(function(){
   }
 
 
-  user_input.on('keyup', function(e){
+  $user_input.on('keyup', function(e){
     e.preventDefault();
-    var input = user_input.val();
+    var input = $user_input.val();
       $.ajax({
         type: 'GET',
         data: ('q=' + input),
@@ -42,7 +42,7 @@ $(function(){
     .done(function(data){
       $.each(data, function(i, data){
         var html = buildHTML(data);
-        user_input.after(html)
+        $user_input.after(html)
       })
      })
     .fail(function(){
