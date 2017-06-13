@@ -98,11 +98,11 @@
       display: inline-block;
       cursor: pointer;
 
-      & &__btn--add {
+      &--add {
         color: $notice-color;
       }
 
-      & &__btn--remove {
+      &--remove {
         color: $alert-color;
       }
     }
