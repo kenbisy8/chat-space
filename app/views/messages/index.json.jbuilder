@@ -1,5 +1,4 @@
 json.array!(@messages) do |message|
-  json.id message.id
   json.nickname message.user.nickname
   json.body message.body
   json.image message.image
