@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
 
+  def search
+    @users = User.search(params[:q])
+    respond_to do |format|
+      format.json
+    end
+  end
+
   def edit
   end
 
