@@ -3,6 +3,12 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json {
+        @messages = Message.reload(params[:q])
+       }
+    end
   end
 
   def create
