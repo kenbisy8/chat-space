@@ -1,11 +1,12 @@
 $(function(){
   function insertHTML(data){
-    var chat_name  = $('<div class="chat__group__room-name">').append(data.nickname);
-    var chat_date  = $('<div class="chat__group__room-date">').append(data.created_at);
+    var chat_room = '<div class="chat__group__room'
+    var chat_name = $(chat_room + '-name">').append(data.nickname);
+    var chat_date = $(chat_room + '-date">').append(data.created_at);
 
-    var result = $('<div class="chat__group__room">').append(chat_name, chat_date);
+    var result = $(chat_room + '>').append(chat_name, chat_date);
     if (data.body) {
-      var chat_body = $('<div class="chat__group__room-text">').append(data.body)
+      var chat_body = $(chat_room + '-text">').append(data.body)
       result.append(chat_body)
     };
     if (data.image.url) {
