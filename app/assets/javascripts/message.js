@@ -1,23 +1,25 @@
 $(function(){
   function buildHTML(data) {
     var html =
-      '<div class="chat__room">'
-         + '<div class="chat__room__name">'
-           + data.nickname
-         + '</div>'
-         + '<div class="chat__room__date">'
-           + data.created_at
-         + '</div>'
-         + '<div class="chat__room__text">'
+      '<div class="chat__group" id="'+ data.id +'">'
+       + '<div class="chat__group__room">'
+           + '<div class="chat__group__room-name">'
+             + data.nickname
+           + '</div>'
+           + '<div class="chat__group__room-date">'
+             + data.created_at
+           + '</div>'
+           + '<div class="chat__group__room-text">'
 
-        if (data.body != "") {
-           html += data.body
-        };
-        if (data.image.url != null) {
-           html += '<img src="'+ data.image.url +'">'
-        };
-         + '</div>'
-      + '</div>'
+          if (data.body != "") {
+             html += data.body
+          };
+          if (data.image.url != null) {
+             html += '<img src="'+ data.image.url +'">'
+          };
+           + '</div>'
+        + '</div>'
+    + '</div>'
   return html
   }
 

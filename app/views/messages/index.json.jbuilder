@@ -1,0 +1,6 @@
+json.array!(@messages) do |message|
+  json.nickname message.user.nickname
+  json.body message.body
+  json.image message.image
+  json.created_at message.created_at.to_s(:time)
+end

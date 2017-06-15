@@ -1,9 +1,11 @@
+= javascript_include_tag 'reload'
 - messages.each do |message|
-  .chat__room
-    .chat__room__name
-      = message.user.nickname
-    .chat__room__date
-      = message.created_at.to_s(:time)
-    .chat__room__text
-      = message.body
-      = image_tag message.image
+  .chat__group{ id: message.id }
+    .chat__group__room
+      .chat__group__room-name
+        = message.user.nickname
+      .chat__group__room-date
+        = message.created_at.to_s(:time)
+      .chat__group__room-text
+        = message.body
+        = image_tag message.image

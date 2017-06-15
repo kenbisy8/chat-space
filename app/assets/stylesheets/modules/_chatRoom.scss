@@ -1,20 +1,20 @@
 
-.chat__room {
+.chat__group__room {
   padding: 40px 40px 0;
 
-  &__name {
+  &-name {
     float: left;
     @include __name;
     color: $chat-fc;
   }
 
-  &__date {
+  &-date {
     @include __sub;
     float: left;
     padding: 4px 10px 0;
   }
 
-  &__text {
+  &-text {
     width: calc( 100vw - 500px );
     clear: both;
     font-size: 14px;
